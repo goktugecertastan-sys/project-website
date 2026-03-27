@@ -59,6 +59,11 @@ const PROFESSION_OPTIONS = [
 ];
 const DEFAULT_THEME = "neon";
 const AUTH_SESSION_KEY = "project-bridge-session";
+const APP_SERVER_HINT = "Project Bridge needs the app server to sign in. Start the server and open http://localhost:3000.";
+const APP_SERVER_UNREACHABLE_MESSAGE =
+  "Project Bridge could not reach the server. Open the app from http://localhost:3000 and try again.";
+const APP_SERVER_INVALID_RESPONSE_MESSAGE =
+  "Project Bridge received an unexpected response from the server. Open the app from http://localhost:3000 and try again.";
 
 const state = {
   users: [],
@@ -137,20 +142,89 @@ function getLastMessage(messages) {
 }
 
 async function request(path, options = {}) {
-  const response = await fetch(path, {
-    headers: {
-      "Content-Type": "application/json",
-    },
-    ...options,
-  });
+  const headers = {
+    "Content-Type": "application/json",
+    ...(options.headers || {}),
+  };
 
-  const data = await response.json();
+  let response;
+
+  try {
+    response = await fetch(resolveRequestUrl(path), {
+      ...options,
+      headers,
+    });
+  } catch (error) {
+    throw normalizeRequestError(error);
+  }
+
+  const contentType = response.headers.get("content-type") || "";
+  let data = {};
+
+  if (contentType.includes("application/json")) {
+    try {
+      data = await response.json();
+    } catch (error) {
+      throw normalizeRequestError(error);
+    }
+  } else {
+    const fallbackText = await response.text().catch(() => "");
+    if (!response.ok || fallbackText.trim().startsWith("<")) {
+      throw new Error(APP_SERVER_INVALID_RESPONSE_MESSAGE);
+    }
+  }
 
   if (!response.ok) {
     throw new Error(data.error || "Request failed");
   }
 
   return data;
+}
+
+function resolveRequestUrl(path) {
+  const rawPath = String(path || "").trim();
+
+  if (/^https?:\/\//i.test(rawPath)) {
+    return rawPath;
+  }
+
+  if (window.location.protocol === "http:" || window.location.protocol === "https:") {
+    return new URL(rawPath, window.location.href).toString();
+  }
+
+  throw new Error(APP_SERVER_HINT);
+}
+
+function normalizeRequestError(error) {
+  const message = String(error?.message || "").trim();
+  const lowerMessage = message.toLowerCase();
+
+  if (window.location.protocol === "file:") {
+    return new Error(APP_SERVER_HINT);
+  }
+
+  if (
+    lowerMessage.includes("the string did not match the expected pattern") ||
+    lowerMessage.includes("failed to fetch") ||
+    lowerMessage.includes("load failed") ||
+    lowerMessage.includes("networkerror")
+  ) {
+    return new Error(APP_SERVER_UNREACHABLE_MESSAGE);
+  }
+
+  if (
+    lowerMessage.includes("unexpected token") ||
+    lowerMessage.includes("invalid json") ||
+    lowerMessage.includes("json")
+  ) {
+    return new Error(APP_SERVER_INVALID_RESPONSE_MESSAGE);
+  }
+
+  if (error instanceof Error) {
+    return error;
+  }
+
+  return new Error(APP_SERVER_UNREACHABLE_MESSAGE);
 }
 
 function getStoredSession() {

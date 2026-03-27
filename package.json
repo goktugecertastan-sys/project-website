@@ -2,7 +2,7 @@
   "name": "project-bridge",
   "version": "1.0.0",
   "private": true,
-  "description": "A collaboration hub where doctors and engineers can post projects, connect, and work inside focused project rooms.",
+  "description": "A premium collaboration platform where professionals can discover projects, build trusted connections, and work inside focused rooms.",
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js"

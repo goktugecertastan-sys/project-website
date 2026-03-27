@@ -589,7 +589,7 @@ seedDemoAccounts().catch((error) => {
   console.error("Unable to seed demo accounts", error);
 });
 
-const server = http.createServer(async (req, res) => {
+async function handleRequest(req, res) {
   const url = new URL(req.url, `http://${req.headers.host || "localhost"}`);
 
   res.setHeader("Cache-Control", "no-store");
@@ -613,8 +613,16 @@ const server = http.createServer(async (req, res) => {
       details: error.message,
     });
   }
-});
+}
 
-server.listen(PORT, () => {
-  console.log(`Project Bridge running at http://localhost:${PORT}`);
-});
+if (require.main === module) {
+  const server = http.createServer(handleRequest);
+
+  server.listen(PORT, () => {
+    console.log(`Project Bridge running at http://localhost:${PORT}`);
+  });
+}
+
+module.exports = {
+  handleRequest,
+};
