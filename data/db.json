@@ -1,0 +1,250 @@
+{
+  "users": [
+    {
+      "id": "u1",
+      "name": "Dr. Selin Kaya",
+      "role": "Doctor",
+      "specialty": "Cardiology",
+      "city": "Istanbul",
+      "status": "Open to clinical pilots",
+      "bio": "Turns care bottlenecks into practical digital workflows and device validation plans.",
+      "interests": [
+        "wearables",
+        "remote monitoring",
+        "patient adherence"
+      ],
+      "availability": "2 pilot reviews this month",
+      "friendIds": [
+        "u3",
+        "u5"
+      ]
+    },
+    {
+      "id": "u2",
+      "name": "Dr. Emre Demir",
+      "role": "Doctor",
+      "specialty": "Radiology",
+      "city": "Ankara",
+      "status": "Seeking AI imaging partners",
+      "bio": "Explores imaging workflows that reduce reporting load and improve early detection.",
+      "interests": [
+        "AI triage",
+        "decision support",
+        "workflow automation"
+      ],
+      "availability": "Available for one new research sprint",
+      "friendIds": [
+        "u4"
+      ]
+    },
+    {
+      "id": "u3",
+      "name": "Mert Aydin",
+      "role": "Engineer",
+      "specialty": "Embedded Systems",
+      "city": "Izmir",
+      "status": "Building sensor-first prototypes",
+      "bio": "Ships hardware concepts quickly and translates abstract needs into dependable prototypes.",
+      "interests": [
+        "IoT",
+        "medical devices",
+        "low-power systems"
+      ],
+      "availability": "Prototype slots open next week",
+      "friendIds": [
+        "u1",
+        "u4"
+      ]
+    },
+    {
+      "id": "u4",
+      "name": "Leyla Arslan",
+      "role": "Engineer",
+      "specialty": "AI and Data Systems",
+      "city": "Berlin",
+      "status": "Interested in responsible health AI",
+      "bio": "Designs data pipelines and model workflows with strong product thinking and clear ethics guardrails.",
+      "interests": [
+        "computer vision",
+        "privacy",
+        "MLOps"
+      ],
+      "availability": "Can mentor early-stage teams",
+      "friendIds": [
+        "u2",
+        "u3"
+      ]
+    },
+    {
+      "id": "u5",
+      "name": "Aylin Cakir",
+      "role": "Engineer",
+      "specialty": "Frontend Product Design",
+      "city": "Amsterdam",
+      "status": "Making complex tools feel simple",
+      "bio": "Builds elegant interfaces for high-trust workflows where clarity matters as much as speed.",
+      "interests": [
+        "UX systems",
+        "dashboards",
+        "accessibility"
+      ],
+      "availability": "Open for design review partnerships",
+      "friendIds": [
+        "u1"
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "id": "acc_mn94awjt_bauhck",
+      "userId": "u1",
+      "firstName": "Selin",
+      "lastName": "Kaya",
+      "email": "selin@projectbridge.demo",
+      "phone": "+90 530 000 0001",
+      "passwordHash": "bcbf9c708b813e6d092e1894e627b9ab:eb4c7537e71a3f7c5bfd972d69a2b4c19ed5ebe153cc58f4a09fa5e86323b7705e4d420fc501381bf4d1586335e395fe1eb36547fd88f56853370a0af6103f6e",
+      "createdAt": "2026-03-27T16:30:26.659Z"
+    },
+    {
+      "id": "acc_mn94awkj_3l7vcu",
+      "userId": "u2",
+      "firstName": "Emre",
+      "lastName": "Demir",
+      "email": "emre@projectbridge.demo",
+      "phone": "+90 530 000 0002",
+      "passwordHash": "436b4bfc4741192dc6ec0c308b7fee04:f620e69a5a7c3deb38c5fd616b92083b51cb4ff2070190a162bfd858df656c931dc1d690aad35e5e910b6deefbcf243670ec6a22b9f14435d22e1b519eb8f26f",
+      "createdAt": "2026-03-27T16:30:26.684Z"
+    },
+    {
+      "id": "acc_mn94awl8_gc4zjp",
+      "userId": "u3",
+      "firstName": "Mert",
+      "lastName": "Aydin",
+      "email": "mert@projectbridge.demo",
+      "phone": "+90 530 000 0003",
+      "passwordHash": "9a4a8791103f6cfa24d09cd381b63e55:1c320f705f35fe979cbe8b9ee95acf30e68346eae2e186d783f5ff3617e03f0f4b6a790516438ccecb1045e053fa305dd9b363268095d0baf32f3fa08202222d",
+      "createdAt": "2026-03-27T16:30:26.707Z"
+    },
+    {
+      "id": "acc_mn94awlv_x18f8q",
+      "userId": "u4",
+      "firstName": "Leyla",
+      "lastName": "Arslan",
+      "email": "leyla@projectbridge.demo",
+      "phone": "+90 530 000 0004",
+      "passwordHash": "442614987a9cc2859c2fb2d8824f4a19:535c8bfc24649b17e41c0fdc681b8a221fcd1463bc452f50573fd97aef82143f7c226a5fd8117291c8679026edbe05a67d637b3549dd03f7275023021b30409f",
+      "createdAt": "2026-03-27T16:30:26.730Z"
+    },
+    {
+      "id": "acc_mn94awmi_kcs4ql",
+      "userId": "u5",
+      "firstName": "Aylin",
+      "lastName": "Cakir",
+      "email": "aylin@projectbridge.demo",
+      "phone": "+90 530 000 0005",
+      "passwordHash": "2f146de7ab29419d3deda1b6f7bcc9e6:38e4ef683d96f50acc993081aef73045bb7ab83ad650e0b006a499dda193c0b5949aa3e0fdc217c981b03783e65f0ef518f7a64eb9501ba2a9b4d218fb102d01",
+      "createdAt": "2026-03-27T16:30:26.770Z"
+    }
+  ],
+  "projects": [
+    {
+      "id": "p1",
+      "title": "Smart Rehab Glove",
+      "domain": "Rehabilitation Tech",
+      "summary": "A sensor-enabled glove that tracks finger motion at home and flags recovery plateaus after injury.",
+      "collaborationGoal": "Need a doctor to define practical recovery milestones and pilot metrics.",
+      "ownerId": "u3",
+      "stage": "Prototype",
+      "lookingFor": "Neurology, physical therapy, and product validation",
+      "tags": [
+        "hardware",
+        "rehab",
+        "remote care"
+      ],
+      "createdAt": "2026-03-25T08:15:00.000Z"
+    },
+    {
+      "id": "p2",
+      "title": "Radiology Triage Console",
+      "domain": "Clinical AI",
+      "summary": "A focused review dashboard that prioritizes scans with urgent findings and explains why they surfaced.",
+      "collaborationGoal": "Need an engineer to design a safe review flow and transparent model feedback loop.",
+      "ownerId": "u2",
+      "stage": "Discovery",
+      "lookingFor": "Computer vision, explainability, frontend systems",
+      "tags": [
+        "imaging",
+        "AI",
+        "workflow"
+      ],
+      "createdAt": "2026-03-24T12:30:00.000Z"
+    },
+    {
+      "id": "p3",
+      "title": "Heart Failure Companion",
+      "domain": "Digital Health",
+      "summary": "A care companion that combines daily symptom check-ins, medication nudges, and clinician alerts.",
+      "collaborationGoal": "Need product-minded engineers to map the patient experience and alert thresholds.",
+      "ownerId": "u1",
+      "stage": "Validation",
+      "lookingFor": "Mobile UX, remote monitoring, alert design",
+      "tags": [
+        "cardiology",
+        "mobile",
+        "patient support"
+      ],
+      "createdAt": "2026-03-23T09:10:00.000Z"
+    }
+  ],
+  "conversations": [
+    {
+      "id": "c1",
+      "title": "Smart Rehab Glove Pilot Room",
+      "projectId": "p1",
+      "participantIds": [
+        "u1",
+        "u3"
+      ],
+      "focus": "Define measurable rehab milestones for an initial at-home pilot.",
+      "messages": [
+        {
+          "id": "m1",
+          "senderId": "u3",
+          "body": "I can capture bend angles and session time. Which recovery markers would be meaningful in week one?",
+          "createdAt": "2026-03-25T08:30:00.000Z"
+        },
+        {
+          "id": "m2",
+          "senderId": "u1",
+          "body": "Grip endurance and consistency matter more than raw range in the first pilot. Let’s compare repetition quality too.",
+          "createdAt": "2026-03-25T08:42:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "title": "Radiology Console Design Review",
+      "projectId": "p2",
+      "participantIds": [
+        "u2",
+        "u4",
+        "u5"
+      ],
+      "focus": "Shape the radiologist workflow before adding new model outputs.",
+      "messages": [
+        {
+          "id": "m3",
+          "senderId": "u2",
+          "body": "The interface has to make urgency obvious without distracting from the actual scan review.",
+          "createdAt": "2026-03-24T13:00:00.000Z"
+        },
+        {
+          "id": "m4",
+          "senderId": "u5",
+          "body": "I’ll sketch a triage rail that keeps explanations visible but secondary to the clinical image.",
+          "createdAt": "2026-03-24T13:18:00.000Z"
+        }
+      ]
+    }
+  ]
+}

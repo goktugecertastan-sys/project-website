@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Bridge</title>
+    <meta
+      name="description"
+      content="A structured collaboration platform where professionals post ideas, connect with the right people, and move projects forward in focused rooms."
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-theme="neon">
+    <section id="authScreen" class="auth-shell">
+      <div id="loginAuthPage" class="auth-page is-active" data-auth-page="login">
+        <div class="auth-stage">
+          <section class="auth-story auth-story-login panel">
+            <p class="eyebrow">Project Bridge Access</p>
+            <h1>Step into a collaboration platform designed for ambitious people who build better together.</h1>
+            <p class="auth-text">
+              Join a high-trust workspace where ideas, expertise, and focused conversations stay connected from the first message to the next concrete move.
+            </p>
+
+            <div class="auth-highlight-grid">
+              <article class="auth-highlight">
+                <p class="eyebrow">Structured discovery</p>
+                <strong>Find promising projects without relying on coincidence.</strong>
+                <p class="section-note">See live opportunities, shared goals, and exactly where your perspective can help.</p>
+              </article>
+
+              <article class="auth-highlight">
+                <p class="eyebrow">Focused contact</p>
+                <strong>Keep each conversation attached to a real opportunity.</strong>
+                <p class="section-note">No lost context, no vague messages, and no confusion about what comes next.</p>
+              </article>
+            </div>
+
+            <div class="auth-demo-card">
+              <p class="eyebrow">Demo access</p>
+              <h2>Try the live workspace immediately.</h2>
+              <p class="section-note">Use the sample account below if you want to explore the product before creating your own membership.</p>
+              <div class="auth-demo-meta">
+                <div class="auth-demo-item">
+                  <span>Email</span>
+                  <strong>selin@projectbridge.demo</strong>
+                </div>
+                <div class="auth-demo-item">
+                  <span>Password</span>
+                  <strong>bridge123</strong>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="auth-panel panel">
+            <div class="auth-panel-header">
+              <p class="eyebrow">Login</p>
+              <h2>Enter the platform.</h2>
+              <p class="section-note">Use your email as the username when signing in.</p>
+            </div>
+
+            <div id="authNoticeLogin" class="auth-notice" aria-live="polite"></div>
+
+            <form id="loginForm" class="auth-form">
+              <label>
+                <span>Username</span>
+                <input name="email" type="email" placeholder="yourname@gmail.com" autocomplete="username" required />
+              </label>
+
+              <label>
+                <span>Password</span>
+                <input name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required />
+              </label>
+
+              <button class="button button-primary auth-submit" type="submit">Enter Project Bridge</button>
+
+              <p class="auth-helper">
+                New here?
+                <button class="auth-inline-button" type="button" data-auth-view="register">Create your membership</button>
+              </p>
+            </form>
+          </section>
+        </div>
+      </div>
+
+      <div id="registerAuthPage" class="auth-page" data-auth-page="register" hidden>
+        <div class="auth-stage auth-stage-register">
+          <section class="auth-story auth-story-register panel">
+            <p class="eyebrow">Become a member</p>
+            <h1>Build a profile that makes your skills, intent, and next move easy to trust.</h1>
+            <p class="auth-text">
+              Membership turns your expertise into a visible collaboration presence, so the right people can discover you, invite you, and move quickly toward a focused project room.
+            </p>
+
+            <div class="auth-highlight-grid">
+              <article class="auth-highlight">
+                <p class="eyebrow">Visible expertise</p>
+                <strong>Show what you do best before the first conversation starts.</strong>
+                <p class="section-note">Your profile helps others understand your strengths, availability, and where you fit best.</p>
+              </article>
+
+              <article class="auth-highlight">
+                <p class="eyebrow">Clear momentum</p>
+                <strong>Move from discovery to action without losing the thread.</strong>
+                <p class="section-note">Projects, rooms, and introductions stay connected so every next step feels intentional.</p>
+              </article>
+            </div>
+
+            <div class="auth-demo-card">
+              <p class="eyebrow">Membership unlocks</p>
+              <h2>Create, connect, and contribute with clarity.</h2>
+              <div class="auth-demo-meta">
+                <div class="auth-demo-item">
+                  <span>Projects</span>
+                  <strong>Publish your own collaboration ideas</strong>
+                </div>
+                <div class="auth-demo-item">
+                  <span>Rooms</span>
+                  <strong>Open focused discussions with context</strong>
+                </div>
+                <div class="auth-demo-item">
+                  <span>Profile</span>
+                  <strong>Let people find your best contribution fast</strong>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="auth-panel panel">
+            <div class="auth-panel-header">
+              <button class="button button-secondary auth-back-link" type="button" data-auth-view="login">Back to login</button>
+              <p class="eyebrow">Become a member</p>
+              <h2>Create your account.</h2>
+              <p class="section-note">Add your details once, then return to login and enter the platform with your email and password.</p>
+            </div>
+
+            <div id="authNoticeRegister" class="auth-notice" aria-live="polite"></div>
+
+            <form id="registerForm" class="auth-form">
+              <div class="auth-split">
+                <label>
+                  <span>First name</span>
+                  <input name="firstName" type="text" placeholder="Ada" autocomplete="given-name" required />
+                </label>
+
+                <label>
+                  <span>Last name</span>
+                  <input name="lastName" type="text" placeholder="Lovelace" autocomplete="family-name" required />
+                </label>
+              </div>
+
+              <label>
+                <span>Gmail / Email</span>
+                <input name="email" type="email" placeholder="yourname@gmail.com" autocomplete="email" required />
+              </label>
+
+              <label>
+                <span>Phone number</span>
+                <input name="phone" type="tel" placeholder="+90 555 123 45 67" autocomplete="tel" required />
+              </label>
+
+              <fieldset class="auth-profession-field">
+                <legend>Meslek / Current role</legend>
+                <p class="auth-profession-note">Hesabı açarken sizi en iyi anlatan mesleği veya mevcut rolü seçin.</p>
+                <div id="professionOptions" class="auth-profession-grid" role="radiogroup" aria-label="Profession options"></div>
+              </fieldset>
+
+              <div class="auth-split">
+                <label>
+                  <span>Create password</span>
+                  <input name="password" type="password" placeholder="At least 8 characters" autocomplete="new-password" required />
+                </label>
+
+                <label>
+                  <span>Confirm password</span>
+                  <input name="confirmPassword" type="password" placeholder="Repeat your password" autocomplete="new-password" required />
+                </label>
+              </div>
+
+              <button class="button button-primary auth-submit" type="submit">Create account</button>
+
+              <p class="auth-helper">
+                Already registered?
+                <button class="auth-inline-button" type="button" data-auth-view="login">Go to login</button>
+              </p>
+            </form>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <div id="appShell" class="app-shell" hidden>
+      <div class="page-shell">
+        <header class="topbar">
+          <div class="topbar-start">
+            <div class="brand-lockup">
+              <p class="eyebrow">Project Bridge</p>
+              <h1 id="pageHeading">Where every profession builds better together.</h1>
+            </div>
+          </div>
+
+          <div class="topbar-controls">
+            <button id="themeToggle" class="theme-toggle" type="button"></button>
+            <button id="logoutButton" class="button button-secondary topbar-logout" type="button">Sign out</button>
+          </div>
+        </header>
+
+        <nav class="section-bar panel" aria-label="Sections navigation">
+          <a class="section-bar-link" href="#overview" data-view-link="overview">
+            <strong>Overview</strong>
+            <span>Platform intro</span>
+          </a>
+          <a class="section-bar-link" href="#projects" data-view-link="projects">
+            <strong>Project Board</strong>
+            <span>Live ideas</span>
+          </a>
+          <a class="section-bar-link" href="#network" data-view-link="network">
+            <strong>Network</strong>
+            <span>People and expertise</span>
+          </a>
+          <a class="section-bar-link" href="#create" data-view-link="create">
+            <strong>Create</strong>
+            <span>Post a project</span>
+          </a>
+          <a class="section-bar-link" href="#focused-contact" data-view-link="focused-contact">
+            <strong>Focused Contact</strong>
+            <span>Start a room</span>
+          </a>
+          <a class="section-bar-link" href="#rooms" data-view-link="rooms">
+            <strong>Rooms Hub</strong>
+            <span>Live threads</span>
+          </a>
+          <a class="section-bar-link" href="#profile" data-view-link="profile">
+            <strong>Member Profiles</strong>
+            <span>Strength and fit</span>
+          </a>
+        </nav>
+
+        <main>
+        <section id="overview" class="page-view is-active" data-view="overview">
+          <section class="hero panel">
+            <div class="hero-copy">
+              <p class="eyebrow">High-trust collaboration network</p>
+              <h2>Find your next <span class="hero-emphasis">collaborator</span> with clarity.</h2>
+              <p class="hero-text">
+                Project Bridge helps ambitious professionals discover the right expertise, evaluate live opportunities, and move into focused project rooms without losing context.
+              </p>
+
+              <div class="hero-actions">
+                <a href="#create" class="button button-primary" data-view-link="create">Launch a project</a>
+                <a href="#network" class="button button-secondary" data-view-link="network">Explore network</a>
+              </div>
+
+              <div class="hero-signal-row">
+                <span class="hero-signal-pill">Curated members</span>
+                <span class="hero-signal-pill">Focused rooms</span>
+                <span class="hero-signal-pill">Cross-discipline matching</span>
+              </div>
+            </div>
+
+            <aside class="hero-visual">
+              <div class="hero-visual-frame">
+                <div class="hero-visual-glow"></div>
+                <div class="hero-visual-orbit"></div>
+                <article class="hero-spotlight-card">
+                  <p class="eyebrow">Featured momentum</p>
+                  <h3>Pioneering environments for high-trust collaboration.</h3>
+                  <p class="section-note">From healthcare pilots to product systems, every opportunity stays tied to people, context, and the next real action.</p>
+                  <div class="hero-spotlight-meta">
+                    <span>Live rooms</span>
+                    <span>Trusted expertise</span>
+                    <span>Actionable next steps</span>
+                  </div>
+                </article>
+              </div>
+            </aside>
+          </section>
+
+          <section id="statsGrid" class="stats-grid"></section>
+        </section>
+
+        <section id="projects" class="page-view" data-view="projects">
+          <div id="projectBoard" class="panel section-panel">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Project board</p>
+                <h3>Live collaboration ideas</h3>
+              </div>
+              <p class="section-note">Every idea includes an owner, a collaboration goal, and a way to open a focused room.</p>
+            </div>
+
+            <div id="projectsList" class="project-list"></div>
+          </div>
+        </section>
+
+        <section id="network" class="page-view" data-view="network">
+          <div id="networkSection" class="panel section-panel">
+            <div class="section-heading people-heading">
+              <div>
+                <p class="eyebrow">Network</p>
+                <h3>People across disciplines</h3>
+              </div>
+              <p class="section-note">Search expertise, review availability, and open the right conversation with confidence.</p>
+            </div>
+
+            <div class="network-toolbar">
+              <label class="network-search" for="peopleSearch">
+                <span>Search by expertise, software, or name</span>
+                <input id="peopleSearch" type="search" placeholder="Cardiology, MLOps, Leyla, Berlin..." />
+              </label>
+            </div>
+
+            <div id="peopleList" class="people-list"></div>
+          </div>
+        </section>
+
+        <section id="create" class="page-view" data-view="create">
+          <form id="projectForm" class="panel section-panel form-panel">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Create</p>
+                <h3>Post a new project idea</h3>
+              </div>
+              <p class="section-note">Your signed-in membership becomes the project owner automatically.</p>
+            </div>
+
+            <label>
+              <span>Project title</span>
+              <input name="title" type="text" placeholder="AI-assisted sleep recovery coach" required />
+            </label>
+
+            <label>
+              <span>Domain</span>
+              <input name="domain" type="text" placeholder="Digital Health" required />
+            </label>
+
+            <label>
+              <span>Summary</span>
+              <textarea name="summary" rows="4" placeholder="Describe what the project does and why it matters." required></textarea>
+            </label>
+
+            <label>
+              <span>Collaboration goal</span>
+              <textarea
+                name="collaborationGoal"
+                rows="3"
+                placeholder="Explain what kind of expertise or perspective you need."
+                required
+              ></textarea>
+            </label>
+
+            <div class="form-split">
+              <label>
+                <span>Stage</span>
+                <select name="stage">
+                  <option value="Discovery">Discovery</option>
+                  <option value="Prototype">Prototype</option>
+                  <option value="Validation">Validation</option>
+                  <option value="Launch Prep">Launch Prep</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Looking for</span>
+                <input name="lookingFor" type="text" placeholder="Frontend, hardware, clinical review" />
+              </label>
+            </div>
+
+            <label>
+              <span>Tags</span>
+              <input name="tags" type="text" placeholder="remote care, AI, dashboard" />
+            </label>
+
+            <button class="button button-primary" type="submit">Publish project</button>
+          </form>
+        </section>
+
+        <section id="focused-contact" class="page-view" data-view="focused-contact">
+          <form id="roomForm" class="panel section-panel form-panel">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Focused contact</p>
+                <h3>Start a project room</h3>
+              </div>
+              <p class="section-note">Create a more specific room than a generic DM. Keep conversations attached to a project.</p>
+            </div>
+
+            <label>
+              <span>Project</span>
+              <select id="roomProjectSelect" name="projectId" required></select>
+            </label>
+
+            <label>
+              <span>Collaborator</span>
+              <select id="roomCollaboratorSelect" name="collaboratorId" required></select>
+            </label>
+
+            <label>
+              <span>Focus</span>
+              <textarea
+                name="focus"
+                rows="3"
+                placeholder="Set a clear objective for this room, like pilot metrics or prototype review."
+              ></textarea>
+            </label>
+
+            <button class="button button-secondary" type="submit">Open focused room</button>
+
+            <div class="network-strip">
+              <p class="eyebrow">Current network</p>
+              <div id="friendshipList" class="friendship-list"></div>
+            </div>
+          </form>
+        </section>
+
+        <section id="rooms" class="page-view rooms-page" data-view="rooms">
+          <div class="panel section-panel page-intro-panel">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Rooms hub</p>
+                <h3>Follow momentum, spot the next reply, and keep decisions moving.</h3>
+              </div>
+              <p class="section-note">This space keeps every thread connected to a real project so teams can move from interest to action without losing context.</p>
+            </div>
+
+            <div id="roomsOverview" class="insight-grid"></div>
+          </div>
+
+          <div class="messaging-grid">
+            <div class="panel section-panel conversation-panel">
+              <div class="section-heading">
+                <div>
+                  <p class="eyebrow">Live rooms</p>
+                  <h3>Focused conversations</h3>
+                </div>
+                <p class="section-note">Pick a room to review what happened last and what should happen next.</p>
+              </div>
+
+              <div id="conversationList" class="conversation-list"></div>
+            </div>
+
+            <div class="panel section-panel thread-panel">
+              <div id="threadHeader" class="thread-header"></div>
+              <div id="messageThread" class="message-thread"></div>
+
+              <form id="messageForm" class="message-form">
+                <label>
+                  <span>Message</span>
+                  <textarea name="body" rows="3" placeholder="Write the next step, question, or feedback." required></textarea>
+                </label>
+
+                <button class="button button-primary" type="submit">Send update</button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section id="profile" class="page-view" data-view="profile">
+          <div class="panel section-panel page-intro-panel">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Member profile</p>
+                <h3>See who is available, what they bring, and where they can create the most value.</h3>
+              </div>
+              <p class="section-note">Use this page to understand each member before reaching out or planning the next collaboration step.</p>
+            </div>
+
+            <div id="profileHighlights" class="insight-grid"></div>
+          </div>
+
+          <section id="profileSection" class="panel section-panel profile-panel">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Profile</p>
+                <h3>Choose a member profile</h3>
+              </div>
+              <p class="section-note">Browse any member here without changing the signed-in person who is using the platform.</p>
+            </div>
+
+            <div class="profile-grid">
+              <div class="profile-selector-panel">
+                <label class="control-field">
+                  <span>Browse member profile</span>
+                  <select id="activeUserSelect" aria-label="Choose member profile"></select>
+                </label>
+
+                <div class="profile-jump-links">
+                  <a href="#projects" class="button button-secondary" data-view-link="projects">Go to projects</a>
+                  <a href="#rooms" class="button button-primary" data-view-link="rooms">Go to rooms</a>
+                </div>
+              </div>
+
+              <div id="profileSummary" class="profile-summary"></div>
+            </div>
+          </section>
+        </section>
+        </main>
+
+        <footer class="site-footer panel">
+          <div class="footer-brand">
+            <p class="eyebrow">Project Bridge</p>
+            <h3>Build momentum with the right collaborators, not random chance.</h3>
+            <p class="section-note">A structured collaboration workspace for people who want trust, clarity, and next steps that stay connected to real opportunities.</p>
+          </div>
+
+          <div class="footer-column">
+            <p class="eyebrow">Platform</p>
+            <a href="#overview" data-view-link="overview">Overview</a>
+            <a href="#projects" data-view-link="projects">Project Board</a>
+            <a href="#network" data-view-link="network">Network</a>
+          </div>
+
+          <div class="footer-column">
+            <p class="eyebrow">Workflow</p>
+            <a href="#create" data-view-link="create">Create</a>
+            <a href="#focused-contact" data-view-link="focused-contact">Focused Contact</a>
+            <a href="#rooms" data-view-link="rooms">Rooms Hub</a>
+          </div>
+
+          <div class="footer-column">
+            <p class="eyebrow">Members</p>
+            <a href="#profile" data-view-link="profile">Profiles</a>
+            <button id="footerThemeToggle" class="footer-theme-link" type="button">Change theme</button>
+            <button id="footerLogoutButton" class="footer-theme-link" type="button">Sign out</button>
+          </div>
+        </footer>
+
+        <div id="notice" class="notice" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
